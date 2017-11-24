@@ -1,13 +1,13 @@
-//Load express module with `require` directive
 var express = require('express')
 var app = express()
 
-//Define request response in root URL (/)
-app.get('/', function (req, res) {
-  res.send('Hello World')
+// Definição de request e response da root
+app.get('/', function (request, response) {
+  response.send('Vocês estão prontas crianças?')
 })
 
-//Launch listening server on port 8080
-app.listen(8080, function () {
-  console.log('App listening on port 8080!')
+
+// Disparando porta que o app ficara "listening" huehue
+app.listen(8085, function () {
+  console.log('Estamos na porta 8085, capitão!')
 })

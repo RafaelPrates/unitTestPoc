@@ -1,24 +1,24 @@
 var expect  = require('chai').expect;
 var request = require('request');
 
-describe('Status and content', function() {
+describe('Verifico status e conteudos da root', function() {
     
-    it('Unit Tests', function(done) {
-        request('http://localhost:8080' , function(error, response, body) {
-            expect(body).to.equal('Hello World');
+    it('Espero que o testo do body seja', function(done) {
+        request('http://localhost:8085' , function(error, response, body) {
+            expect(body).to.equal('Vocês estão prontas crianças?');
             done();
         });
     });
 
-    it('Main page status', function(done) {
-        request('http://localhost:8080' , function(error, response, body) {
+    it('Espero que o status da pagina seja 200', function(done) {
+        request('http://localhost:8085' , function(error, response, body) {
             expect(response.statusCode).to.equal(200);
             done();
         });
     });
 
-    it('About page content', function(done) {
-        request('http://localhost:8080/about' , function(error, response, body) {
+    it('Espero que a pagina /about não esteja funcionando', function(done) {
+        request('http://localhost:8085/about' , function(error, response, body) {
             expect(response.statusCode).to.equal(404);
             done();
         });
